@@ -4,8 +4,6 @@ import time
 
 with_file_i_need_to_order: set = {"txt", "pdf", "jpg", "py", "c", "c++", "java", "png"}
 
-
-
 def order(path: str):
     
     while True:
@@ -73,15 +71,12 @@ def order(path: str):
         else:
             shutil.move(path+"/"+i, path+"/Non_classificabile")
 
-
-
 if __name__ == "__main__":
     start:str = os.environ["HOMEPATH"]
     if "OneDrive" in os.listdir(start):
         start += "/OneDrive/Desktop"
     else:
         start = os.path.expanduser("~/Desktop")
-    # start_test = "C:/Users/marco/OneDrive/Desktop/Progetti_python/Python riodonare/Desktop_di_prova/Folder1"
     order(start)
     
 
